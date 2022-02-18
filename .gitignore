@@ -1,0 +1,38 @@
+# gitignore for C++
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.d 
+
+#diff tool files
+*.bak
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+#*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+#*.a
+*.lib
+
+# Visual Studio Files
+Debug
+Release
+*.suo
+*.csproj.user
+*.vbproj.user
+*.vcxproj.user
+ipch
+*sdf
+*.db
+*.rule
+*.obj
+*.tlog
+*.tcl
+*.log
+*.lastbuildstate
+.vs/
