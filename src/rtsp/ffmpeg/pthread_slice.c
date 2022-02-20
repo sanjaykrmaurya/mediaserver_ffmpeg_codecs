@@ -27,13 +27,12 @@
 #include "avcodec.h"
 #include "internal_codec.h"
 #include "pthread_internal.h"
-//#include "thread.h"
+#include "avthread.h"
 
 #include "avassert.h"
 #include "common.h"
 //#include "cpu.h"
 #include "mem.h"
-//#include "thread.h"
 
 #define attribute_align_arg
 

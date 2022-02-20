@@ -22,7 +22,7 @@
 #ifdef _WIN32
 #include <windows.h>
 #if _WIN32_WINNT < 0x0602
-#include "libavutil/wchar_filename.h"
+#include "wchar_filename.h"
 #endif
 /**
  * Safe function used to open dynamic libs. This attempts to improve program security
