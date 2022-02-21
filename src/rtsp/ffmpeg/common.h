@@ -27,13 +27,7 @@
 
 #ifndef AVUTIL_COMMON_H
 #define AVUTIL_COMMON_H
-
-
-#define av_const
-#define av_always_inline 
-
-   
-
+ 
 #if defined(__cplusplus) && !defined(__STDC_CONSTANT_MACROS) && !defined(UINT64_C)
 #error missing -D__STDC_CONSTANT_MACROS / #define __STDC_CONSTANT_MACROS
 #endif
@@ -47,10 +41,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-//#include "attributes.h"
+#include "attributes.h"
 //#include "macros.h"
 //#include "version.h"
-//#include "libavutil/avconfig.h"
+#include "avconfig.h"
 
 #if AV_HAVE_BIGENDIAN
 #   define AV_NE(be, le) (be)

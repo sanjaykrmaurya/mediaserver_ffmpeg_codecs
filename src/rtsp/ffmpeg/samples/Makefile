@@ -3,7 +3,7 @@ CC = gcc
 OUT_FILE_NAME = ffmpeg.a
 FFMPEG_DIR = ../../ffmpeg
 
-CFLAGS=  -g -Wall -c 
+CFLAGS=  -Wno-uninitialized -Wno-attributes -Wno-deprecated-declarations -Wno-switch -Wno-switch-enum -Wno-pointer-sign -I$(FFMPEG_DIR)/ -no-pie -c 
 
 TARGETS=$(OUT_FILE_NAME) $(TARGET)
 
@@ -30,7 +30,7 @@ $(OUT_FILE_NAME): $(patsubst %.c,%.o,$(wildcard $(FFMPEG_DIR)/*[!template].c))
 
 
 #Compiling every *.cpp to *.o
-%.o: %.c 
+%.o: *[!template].c 
 	$(CC) -c $(INC) $(CFLAGS) -o $@  $<
 	
 dirmake:
@@ -46,7 +46,8 @@ CXX     = g++
 TARGET = decode_video # define the name of the executable
 SOURCES    = $(wildcard *.c $(FFMPEG_DIR)/*[!template].c)
 
-CXXFLAGS   := -g -Wno-inconsistent-missing-override -Wno-uninitialized -Wno-attributes -Wno-fpermissive -Wno-deprecated-declarations -I$(FFMPEG_DIR)/ -no-pie 
+#CXXFLAGS   := -g -Wno-inconsistent-missing-override -Wno-uninitialized -Wno-attributes -Wno-fpermissive -Wno-deprecated-declarations -I$(FFMPEG_DIR)/ -no-pie 
+CXXFLAGS   := -g -Wno-uninitialized -Wno-attributes -Wno-deprecated-declarations -Wno-switch -Wno-switch-enum -Wno-pointer-sign -I$(FFMPEG_DIR)/ -no-pie 
 
 CPPFLAGS   := -I$(FFMPEG_DIR)/ 
 LDFLAGS   := -L$(FFMPEG_DIR) 

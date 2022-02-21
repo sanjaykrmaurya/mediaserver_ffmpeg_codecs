@@ -166,7 +166,7 @@
     }\
 }
 
-//#include "libm.h"
+#include "libm.h"
 
 /**
  * Return NULL if CONFIG_SMALL is true, otherwise the argument

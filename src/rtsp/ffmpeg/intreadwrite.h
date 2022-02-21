@@ -20,13 +20,9 @@
 #define AVUTIL_INTREADWRITE_H
 
 #include <stdint.h>
-//#include "libavutil/avconfig.h"
-//#include "attributes.h"
+#include "avconfig.h"
+#include "attributes.h"
 #include "bswap.h"
-
-#define av_alias
-
-
 
 typedef union {
     uint64_t u64;

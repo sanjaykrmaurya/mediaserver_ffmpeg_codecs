@@ -22,6 +22,7 @@
 #include "avcodec.h"
 #include "bsf.h"
 #include "mpeg4video.h"
+#include "mem.h"
 
 typedef struct UnpackBFramesBSFContext {
     uint8_t *b_frame_buf;

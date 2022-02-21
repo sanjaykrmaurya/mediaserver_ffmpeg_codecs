@@ -6,19 +6,13 @@
 
 #include <limits.h>
 #include <stdint.h>
-#include <stdio.h>
-#include "common.h"
+//#include <stdio.h>
+
+#include "attributes.h"
+//#include "common.h"
 #include "error.h"
-//#include "avutil.h"
+#include "avutil.h"
 
-
-
-#define av_malloc_attrib
-
-#define av_alloc_size(...)
-#define av_warn_unused_result
-    
-    
 #if defined(__INTEL_COMPILER) && __INTEL_COMPILER < 1110 || defined(__SUNPRO_C)
     #define DECLARE_ALIGNED(n,t,v)      t __attribute__ ((aligned (n))) v
     #define DECLARE_ASM_CONST(n,t,v)    const t __attribute__ ((aligned (n))) v
@@ -63,6 +57,11 @@
  * @see <a href="https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-g_t_0040code_007bmalloc_007d-function-attribute-3251">Function attribute `malloc` in GCC's documentation</a>
  */
 
+#if AV_GCC_VERSION_AT_LEAST(3,1)
+    #define av_malloc_attrib __attribute__((__malloc__))
+#else
+    #define av_malloc_attrib
+#endif
 
 /**
  * @def av_alloc_size(...)
@@ -79,7 +78,11 @@
  * @see <a href="https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-g_t_0040code_007balloc_005fsize_007d-function-attribute-3220">Function attribute `alloc_size` in GCC's documentation</a>
  */
 
-
+#if AV_GCC_VERSION_AT_LEAST(4,3)
+    #define av_alloc_size(...) __attribute__((alloc_size(__VA_ARGS__)))
+#else
+    #define av_alloc_size(...)
+#endif
 
 /**
  * @}
@@ -619,6 +622,4 @@ void av_max_alloc(size_t max);
  * @}
  */
 
-
-
-#endif
+#endif /* AVUTIL_MEM_H */

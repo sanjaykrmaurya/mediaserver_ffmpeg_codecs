@@ -24,6 +24,7 @@
 #include <stdint.h>
 #include <inttypes.h>
 
+#include "avcodec.h"
 #include "movenc.h"
 #include "avformat.h"
 #include "avio_internal.h"
@@ -55,7 +56,6 @@
 //#include "rtpenc.h"
 #include "mov_chan.h"
 #include "vpcc.h"
-
 
 #define LIBAVCODEC_IDENT        "Lavc" AV_STRINGIFY(1)
 #define LIBAVFORMAT_IDENT       "Lavf" AV_STRINGIFY(1)

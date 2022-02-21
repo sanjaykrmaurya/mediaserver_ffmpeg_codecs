@@ -28,6 +28,7 @@
 #ifndef AVCODEC_H264DEC_H
 #define AVCODEC_H264DEC_H
 
+#include "internal_util.h"
 #include "buffer.h"
 #include "intreadwrite.h"
 #include "avthread.h"

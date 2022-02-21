@@ -36,10 +36,11 @@
 #include <string.h>
 #include "avassert.h"
 #include "internal_codec.h"
+#include "internal_util.h"
 #include "intreadwrite.h"
 //#include "timer.h"
 #include "random_seed.h"
-//#include "sha.h"
+#include "sha.h"
 
 #ifndef TEST
 #define TEST 0

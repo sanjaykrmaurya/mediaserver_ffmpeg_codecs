@@ -25,7 +25,6 @@
 #include <stddef.h>
 #include <stdint.h>
 #include "attributes.h"
- #define av_const
     
 /**
  * @addtogroup lavu_string
@@ -346,9 +345,6 @@ enum AVEscapeMode {
  * @return the length of the allocated string, or a negative error code in case of error
  * @see av_bprint_escape()
  */
-
-
-#define av_warn_unused_result
 
 av_warn_unused_result
 int av_escape(char **dst, const char *src, const char *special_chars,
